@@ -13,11 +13,11 @@ public class FizzBuzz {
     }
 
     public void print(IntStream numbers) {
-        numbers.forEach(number -> System.out.println(findRuleFor(number).orElse(new DefaultRule()).applyTo(number)));
+        numbers.forEach(number -> System.out.println(findRuleFor(number).orElse(new DefaultRule(number)).apply()));
     }
 
     private Optional<Rule> findRuleFor(int number) {
-        return rules.stream().filter(rule -> rule.applyTo(number) != null).findFirst();
+        return rules.stream().filter(rule -> rule.isSatisfiedBy(number)).findFirst();
     }
 
 }

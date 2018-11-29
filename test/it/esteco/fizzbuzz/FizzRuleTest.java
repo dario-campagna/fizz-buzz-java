@@ -4,24 +4,28 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 public class FizzRuleTest {
 
     @Test
-    public void returnFizzWhenMultipleOfThree() {
-        FizzRule rule = new FizzRule();
-
-        assertThat(rule.applyTo(3), is(equalTo("Fizz")));
-        assertThat(rule.applyTo(18), is(equalTo("Fizz")));
+    public void returnsFizz() {
+        assertThat(new FizzRule().apply(), is(equalTo("Fizz")));
     }
 
     @Test
-    public void returnNullIfNotMultipleOfThree() {
+    public void isSatisfiedWhenMultipleOfThree() {
         FizzRule rule = new FizzRule();
 
-        assertNull(rule.applyTo(1));
+        assertTrue(rule.isSatisfiedBy(3));
+        assertTrue(rule.isSatisfiedBy(18));
+    }
+
+    @Test
+    public void isNotSatisfiedWhenNotMultipleOfThree() {
+        FizzRule rule = new FizzRule();
+
+        assertFalse(rule.isSatisfiedBy(1));
     }
 
 }
