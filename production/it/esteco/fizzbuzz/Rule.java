@@ -1,5 +1,5 @@
 package it.esteco.fizzbuzz;
 
 public interface Rule {
-    String apply(int number);
+    String applyTo(int number);
 }

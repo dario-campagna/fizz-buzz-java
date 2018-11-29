@@ -41,9 +41,9 @@ public class PrintNumbersTest {
         assertThat(outputStream.toString(), is(equalTo("Fizz\n")));
     }
 
-    @Test@Ignore
+    @Test
     public void printOneTwoFizz() {
-        FizzBuzz fizzBuzz = new FizzBuzz(null);
+        FizzBuzz fizzBuzz = new FizzBuzz(Arrays.asList(new FizzRule(), new DefaultRule()));
 
         fizzBuzz.print(IntStream.rangeClosed(1,3));
 

@@ -12,6 +12,6 @@ public class DefaultRuleTest {
     public void alwaysReturnSameNumber() {
         Rule rule = new DefaultRule();
 
-        assertThat(rule.apply(1), is(equalTo("1")));
+        assertThat(rule.applyTo(1), is(equalTo("1")));
     }
 }
