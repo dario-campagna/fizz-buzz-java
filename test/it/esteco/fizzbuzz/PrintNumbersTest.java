@@ -1,7 +1,6 @@
 package it.esteco.fizzbuzz;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -25,7 +24,7 @@ public class PrintNumbersTest {
 
     @Test
     public void printOne() {
-        FizzBuzz fizzBuzz = new FizzBuzz(Arrays.asList(new DefaultRule()));
+        FizzBuzz fizzBuzz = new FizzBuzz(Arrays.asList());
 
         fizzBuzz.print(IntStream.of(1));
 
@@ -42,11 +41,20 @@ public class PrintNumbersTest {
     }
 
     @Test
-    public void printOneTwoFizz() {
-        FizzBuzz fizzBuzz = new FizzBuzz(Arrays.asList(new FizzRule(), new DefaultRule()));
+    public void printOneToThree() {
+        FizzBuzz fizzBuzz = new FizzBuzz(Arrays.asList(new FizzRule()));
 
         fizzBuzz.print(IntStream.rangeClosed(1,3));
 
         assertThat(outputStream.toString(), is(equalTo("1\n2\nFizz\n")));
+    }
+
+    @Test
+    public void printOneToFive() {
+        FizzBuzz fizzBuzz = new FizzBuzz(Arrays.asList(new FizzRule(), new BuzzRule()));
+
+        fizzBuzz.print(IntStream.rangeClosed(1,5));
+
+        assertThat(outputStream.toString(), is(equalTo("1\n2\nFizz\n4\nBuzz\n")));
     }
 }
