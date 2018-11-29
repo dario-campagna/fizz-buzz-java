@@ -1,7 +1,17 @@
 package it.esteco.fizzbuzz;
 
+import java.util.stream.IntStream;
+
 public class FizzBuzz {
-    public void print(int number) {
-        System.out.println("1");
+
+    private DefaultRule rule;
+
+    public FizzBuzz(DefaultRule rule) {
+        this.rule = rule;
     }
+
+    public void print(IntStream numbers) {
+        numbers.forEach(number -> System.out.println(rule.apply(number)));
+    }
+
 }
