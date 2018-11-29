@@ -31,9 +31,9 @@ public class PrintNumbersTest {
         assertThat(outputStream.toString(), is(equalTo("1\n")));
     }
 
-    @Test@Ignore
+    @Test
     public void printFizzInsteadOfThree() {
-        FizzBuzz fizzBuzz = new FizzBuzz(null);
+        FizzBuzz fizzBuzz = new FizzBuzz(new FizzRule());
 
         fizzBuzz.print(IntStream.of(3));
 

@@ -4,9 +4,9 @@ import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
-    private DefaultRule rule;
+    private Rule rule;
 
-    public FizzBuzz(DefaultRule rule) {
+    public FizzBuzz(Rule rule) {
         this.rule = rule;
     }
 

@@ -9,8 +9,8 @@ import static org.junit.Assert.assertThat;
 public class DefaultRuleTest {
 
     @Test
-    public void returnSameNumber() {
-        DefaultRule rule = new DefaultRule();
+    public void alwaysReturnSameNumber() {
+        Rule rule = new DefaultRule();
 
         assertThat(rule.apply(1), is(equalTo("1")));
     }
