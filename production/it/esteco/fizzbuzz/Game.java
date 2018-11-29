@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-public class FizzBuzz {
+public class Game {
 
     private List<Rule> rules;
 
-    public FizzBuzz(List<Rule> rules) {
+    public Game(List<Rule> rules) {
         this.rules = rules;
     }
 

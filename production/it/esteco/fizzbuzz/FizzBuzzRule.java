@@ -3,7 +3,7 @@ package it.esteco.fizzbuzz;
 public class FizzBuzzRule implements Rule {
     @Override
     public String apply() {
-        return null;
+        return "FizzBuzz";
     }
 
     @Override
