@@ -1,17 +1,18 @@
 package it.esteco.fizzbuzz;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
-    private Rule rule;
+    private List<Rule> rules;
 
-    public FizzBuzz(Rule rule) {
-        this.rule = rule;
+    public FizzBuzz(List<Rule> rules) {
+        this.rules = rules;
     }
 
     public void print(IntStream numbers) {
-        numbers.forEach(number -> System.out.println(rule.apply(number)));
+        numbers.forEach(number -> System.out.println(rules.get(0).apply(number)));
     }
 
 }
