@@ -5,10 +5,10 @@
     <output-test url="file://$MODULE_DIR$/test/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/production">
-      <sourceFolder url="file://$MODULE_DIR$/production" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/production/source" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/test">
-      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/source" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
