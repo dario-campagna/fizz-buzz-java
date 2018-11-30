@@ -14,17 +14,12 @@ public class BuzzRuleTest {
     }
 
     @Test
-    public void returnTrueWhenMultipleOfFive() {
+    public void isSatisfiedByMultiplesOfFive() {
         BuzzRule buzzRule = new BuzzRule();
 
         assertTrue(buzzRule.isSatisfiedBy(5));
         assertTrue(buzzRule.isSatisfiedBy(25));
-    }
-
-    @Test
-    public void returnFalseIfNotMultipleOfFive() {
-        BuzzRule buzzRule = new BuzzRule();
-
         assertFalse(buzzRule.isSatisfiedBy(1));
     }
+
 }

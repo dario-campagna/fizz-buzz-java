@@ -10,14 +10,14 @@ import static org.junit.Assert.assertTrue;
 public class DefaultRuleTest {
 
     @Test
-    public void alwaysReturnSameNumber() {
+    public void alwaysReturnSameNumberAsString() {
         DefaultRule rule = new DefaultRule(1);
 
         assertThat(rule.apply(), is(equalTo("1")));
     }
 
     @Test
-    public void alwaysSatisfied() {
+    public void isSatisfiedByAnyNumber() {
         DefaultRule rule = new DefaultRule(1);
 
         assertTrue(rule.isSatisfiedBy(1));

@@ -1,6 +1,7 @@
 package it.esteco.fizzbuzz;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -44,14 +45,14 @@ public class GameTest {
 
     @Test
     public void applyFirstSatisfiedRule() {
-        Game game = new Game(Arrays.asList(new UnsatisfiableRule(), new AlwaysSatisfiedRule()));
+        Game game = new Game(Arrays.asList(new UnsatisfiableRule(), new AlwaysSatisfiedRule(), new AlwaysSatisfiedRule()));
 
         game.print(IntStream.of(1));
 
-        assertThat(outputStream.toString(), is(equalTo("yes\n")));
+        assertThat(outputStream.toString(), is(equalTo("a\n")));
     }
 
-    private class UnsatisfiableRule implements Rule {
+    private static class UnsatisfiableRule implements Rule {
         @Override
         public String apply() {
             return null;
@@ -63,10 +64,10 @@ public class GameTest {
         }
     }
 
-    private class AlwaysSatisfiedRule implements Rule {
+    private static class AlwaysSatisfiedRule implements Rule {
         @Override
         public String apply() {
-            return "yes";
+            return "a";
         }
 
         @Override

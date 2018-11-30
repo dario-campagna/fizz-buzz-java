@@ -8,6 +8,10 @@ public class FizzRule implements Rule {
 
     @Override
     public boolean isSatisfiedBy(int number) {
+        return isMultipleOfThree(number);
+    }
+
+    private boolean isMultipleOfThree(int number) {
         return number % 3 == 0;
     }
 }

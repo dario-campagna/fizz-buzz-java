@@ -14,17 +14,11 @@ public class FizzRuleTest {
     }
 
     @Test
-    public void isSatisfiedWhenMultipleOfThree() {
+    public void isSatisfiedByMultiplesOfThree() {
         FizzRule rule = new FizzRule();
 
         assertTrue(rule.isSatisfiedBy(3));
         assertTrue(rule.isSatisfiedBy(18));
-    }
-
-    @Test
-    public void isNotSatisfiedWhenNotMultipleOfThree() {
-        FizzRule rule = new FizzRule();
-
         assertFalse(rule.isSatisfiedBy(1));
     }
 
