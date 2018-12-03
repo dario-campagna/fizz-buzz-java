@@ -6,18 +6,21 @@ import java.util.stream.Stream;
 
 public class Game {
 
-    private List<Rule> rules;
+    private final List<Rule> rules;
 
-    public Game(List<Rule> rules) {
+    public <T> Game(List<Rule> rules) {
         this.rules = rules;
     }
 
-    public void print(IntStream numbers) {
-        numbers.forEach(number -> System.out.println(
-                findRulesFor(number)
-                        .map(Rule::apply)
-                        .reduce(String::concat)
-                        .orElse(String.valueOf(number))));
+    public String say(int number) {
+        return valueFor(number);
+    }
+
+    private String valueFor(int number) {
+        return findRulesFor(number)
+                .map(Rule::apply)
+                .reduce(String::concat)
+                .orElse(String.valueOf(number));
     }
 
     private Stream<Rule> findRulesFor(int number) {

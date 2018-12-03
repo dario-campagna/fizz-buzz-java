@@ -1,14 +1,9 @@
 package it.esteco.fizzbuzz;
 
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.stream.IntStream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -16,40 +11,25 @@ import static org.junit.Assert.assertThat;
 
 public class GameTest {
 
-    private ByteArrayOutputStream outputStream;
-
-    @Before
-    public void setUp() throws Exception {
-        outputStream = new ByteArrayOutputStream();
-        PrintStream printStream = new PrintStream(outputStream);
-        System.setOut(printStream);
-    }
-
     @Test
     public void applyDefaultRuleIfNoRuleGiven() {
         Game game = new Game(Collections.emptyList());
 
-        game.print(IntStream.of(3));
-
-        assertThat(outputStream.toString(), is(equalTo("3\n")));
+        assertThat(game.say(3), is(equalTo("3")));
     }
 
     @Test
     public void applyDefaultRuleIfNoRuleIsSatisfied() {
         Game game = new Game(Collections.singletonList(new UnsatisfiableRule()));
 
-        game.print(IntStream.of(4));
-
-        assertThat(outputStream.toString(), is(equalTo("4\n")));
+        assertThat(game.say(4), is(equalTo("4")));
     }
 
     @Test
     public void mergeResultOfAllSatisfiedRules() {
         Game game = new Game(Arrays.asList(new UnsatisfiableRule(), new AlwaysSatisfiedRule(), new AlwaysSatisfiedRule()));
 
-        game.print(IntStream.of(1));
-
-        assertThat(outputStream.toString(), is(equalTo("aa\n")));
+        assertThat(game.say(1), is(equalTo("aa")));
     }
 
     private static class UnsatisfiableRule implements Rule {
@@ -75,4 +55,5 @@ public class GameTest {
             return true;
         }
     }
+
 }
