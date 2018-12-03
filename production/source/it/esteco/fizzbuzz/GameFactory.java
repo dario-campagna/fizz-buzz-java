@@ -8,4 +8,7 @@ public class GameFactory {
         return new Game(Arrays.asList(new FizzRule(), new BuzzRule()));
     }
 
+    public static Game createFizzBuzzBang() {
+        return new Game(Arrays.asList(new FizzRule(), new BuzzRule(), new BangRule()));
+    }
 }
