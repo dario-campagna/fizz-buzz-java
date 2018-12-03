@@ -44,12 +44,12 @@ public class GameTest {
     }
 
     @Test
-    public void applyFirstSatisfiedRule() {
+    public void mergeResultOfAllSatisfiedRules() {
         Game game = new Game(Arrays.asList(new UnsatisfiableRule(), new AlwaysSatisfiedRule(), new AlwaysSatisfiedRule()));
 
         game.print(IntStream.of(1));
 
-        assertThat(outputStream.toString(), is(equalTo("a\n")));
+        assertThat(outputStream.toString(), is(equalTo("aa\n")));
     }
 
     private static class UnsatisfiableRule implements Rule {

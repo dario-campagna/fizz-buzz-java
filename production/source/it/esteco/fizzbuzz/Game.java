@@ -1,8 +1,8 @@
 package it.esteco.fizzbuzz;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Game {
 
@@ -13,11 +13,15 @@ public class Game {
     }
 
     public void print(IntStream numbers) {
-        numbers.forEach(number -> System.out.println(findRuleFor(number).orElse(new DefaultRule(number)).apply()));
+        numbers.forEach(number -> System.out.println(
+                findRulesFor(number)
+                        .map(Rule::apply)
+                        .reduce(String::concat)
+                        .orElse(new DefaultRule(number).apply())));
     }
 
-    private Optional<Rule> findRuleFor(int number) {
-        return rules.stream().filter(rule -> rule.isSatisfiedBy(number)).findFirst();
+    private Stream<Rule> findRulesFor(int number) {
+        return rules.stream().filter(rule -> rule.isSatisfiedBy(number));
     }
 
 }
