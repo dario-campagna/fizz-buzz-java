@@ -17,7 +17,7 @@ public class Game {
                 findRulesFor(number)
                         .map(Rule::apply)
                         .reduce(String::concat)
-                        .orElse(new DefaultRule(number).apply())));
+                        .orElse(String.valueOf(number))));
     }
 
     private Stream<Rule> findRulesFor(int number) {
