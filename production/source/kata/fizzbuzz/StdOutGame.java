@@ -2,10 +2,10 @@ package kata.fizzbuzz;
 
 import java.util.stream.IntStream;
 
-public class ConsoleGame {
+public class StdOutGame {
     private Game game;
 
-    public ConsoleGame() {
+    public StdOutGame() {
         this.game = new Game();
     }
 
