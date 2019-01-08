@@ -2,14 +2,14 @@ package kata.fizzbuzz;
 
 import java.util.stream.IntStream;
 
-public class StdOutGame {
+public class Match {
     private Game game;
 
-    public StdOutGame() {
+    public Match() {
         this.game = new Game();
     }
 
     public void play(IntStream numbers) {
-        numbers.forEach(number -> System.out.println(game.say(number)));
+        numbers.forEach(number -> System.out.println(game.convert(number)));
     }
 }

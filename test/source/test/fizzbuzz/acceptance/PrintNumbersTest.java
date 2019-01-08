@@ -1,6 +1,6 @@
 package test.fizzbuzz.acceptance;
 
-import kata.fizzbuzz.StdOutGame;
+import kata.fizzbuzz.Match;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,9 +24,9 @@ public class PrintNumbersTest {
 
     @Test
     public void printOneToOneHundred() {
-        StdOutGame stdOutGame = new StdOutGame();
+        Match match = new Match();
 
-        stdOutGame.play(IntStream.rangeClosed(1,100));
+        match.play(IntStream.rangeClosed(1,100));
 
         assertThat(outputStream.toString(), is(equalTo(
                 "1\n" +
