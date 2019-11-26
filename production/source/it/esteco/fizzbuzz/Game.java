@@ -8,7 +8,7 @@ public class Game {
 
     private final List<Rule> rules;
 
-    public <T> Game(List<Rule> rules) {
+    public Game(List<Rule> rules) {
         this.rules = rules;
     }
 
